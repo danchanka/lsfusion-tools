@@ -11,7 +11,7 @@ Building and testing before pull request (https://highlightjs.readthedocs.io/en/
 
   > node tools/build.js --no-compress lsfusion  
 
-Then you can use tools/developer.html to see how this build highlights a test sample. 
+Then you can use tools/developer.html (or build/demo/index.html) to see how this build highlights a test sample. 
 Then you need to test language auto detection. Build the package with all languages: 
 
   > node tools/build.js --target node
