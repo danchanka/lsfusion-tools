@@ -1,4 +1,4 @@
-Excel to JasperReports copy-paste tool.
+### Excel to JasperReports copy-paste tool.
 
 This PERSONAL.XLSB file contains macro `CopySelectedSheetDataToJRXML`. It allows to select a region in Excel sheet and copy text inside the region to JasperReports XML format. Text fields are supported with their position, text alignments and borders.
 
