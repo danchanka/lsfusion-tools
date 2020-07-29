@@ -2,6 +2,7 @@
 Language: lsFusion
 Author: Aliaksei Danchanka <danchenko@gmail.com>
 Description: lsFusion platform programming language
+Website: http://lsfusion.org/
 */
 
 function(hljs) {
