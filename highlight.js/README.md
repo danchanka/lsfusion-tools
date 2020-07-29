@@ -1,6 +1,6 @@
-### Language definition for highlight.js
+## Language definition for highlight.js
 
-#### Pull request (https://highlightjs.readthedocs.io/en/latest/language-contribution.html)    
+### Pull request (https://highlightjs.readthedocs.io/en/latest/language-contribution.html)    
 
 - add or change language definition in `src/languages/lsfusion.js`
 - add or change code example in `test/detect/lsfusion/default.txt`
@@ -23,7 +23,7 @@ Go to test/ directory.
     npm install
     npm test
 
-#### Usage of the package 
+### Usage of the package 
 - build a package as described above
 
     node tools/build.js lsfusion java    
