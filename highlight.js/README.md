@@ -26,7 +26,7 @@ Go to test/ directory.
 ### Usage of the package 
 - build a package as described above
 
-    node tools/build.js lsfusion java    
+      node tools/build.js lsfusion java    
 
 - find highlight.pack.js in the build/ directory
 - find a sample usage at the demo/ directory   
