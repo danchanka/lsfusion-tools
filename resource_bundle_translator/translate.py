@@ -1,7 +1,7 @@
-from googletrans import Translator
+from google_trans_new import google_translator  
 import sys
 import os
-translator = Translator()
+translator = google_translator()
 
 def batchTranslate(outf, lines, src_lang, dest_lang):
     keys = []
@@ -14,10 +14,13 @@ def batchTranslate(outf, lines, src_lang, dest_lang):
             isupper.append(a[1].strip()[0].isupper())
             value += a[1].strip() + '\n'
 
-    if len(value) > 0:    
-        translated = translator.translate(value, src=src_lang, dest=dest_lang)
-        values = translated.text.split('\n')
-        
+    if len(value) > 0:
+        translated = translator.translate(value, lang_src=src_lang, lang_tgt=dest_lang)
+        values = []
+        if '\n' in translated:
+            values = translated.split('\n')
+        else:
+            values = translated.split('  ')    
         for i in range(len(keys)):
             if isupper[i] and not values[i][0].isupper():
                 values[i] = values[i][0].upper() + values[i][1:]
@@ -58,7 +61,7 @@ os.system('native2ascii -reverse -encoding utf-8 {} > {}'.format(full_filename, 
 inf = open(full_filename_utf8, 'r', encoding='utf-8')
 lines = inf.readlines()
 
-languages = ['uk', 'be']
+languages = ['uz']
 for lang in languages:
     out_filename_utf8 = bundle_name + '_' + lang + '.properties_u'
     outf = open(out_filename_utf8, 'w', encoding='utf-8')
