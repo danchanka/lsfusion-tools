@@ -8,6 +8,8 @@
 pip install google_trans_new
 ```
 
+**Change**: Now it is not enough just to install the library, you must also replace the .py files with files from the https://github.com/lushan88a/google_trans_new repository
+
 - [native2ascii](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/native2ascii.html) tool available from the command line.
 
 ### Usage
