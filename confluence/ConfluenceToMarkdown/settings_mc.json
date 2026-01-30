@@ -1,0 +1,17 @@
+{
+	"html_dir": "MC",
+	"xml_file": "entities_mc.xml",
+	"input_dir": "mycompany-docs/docs/",
+	"output_dir": "mycompany-docs/docs/",
+	"filemap": "filemap_mc.json",
+	"anchormap": "anchormap_mc.json",
+	"samples": "samples_mc.json",
+	"anchors_log": "anchors_mc.log",
+	"samples_url": "",
+	"mdmap": "md_map_mc.json",
+	"labelmap": "label_map_mc.json",
+	"infomap": "infomap_mc.json",
+	"infomap_log": "infomap_mc.log",
+	"category_list": "category_list_mc.json",
+	"overview_str": "Overview"
+}

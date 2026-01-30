@@ -158,14 +158,14 @@ def escape_title(title):
 
 def create_title(data, is_category, overview_str):
     lines = data.split('\n')
-    title = lines[2][2:]
+    title = lines[0][2:]
     data = '---\n'
     if is_category:
         data += f'title: {escape_title(title + ": " + overview_str)}\n'
         data += f'sidebar_label: {overview_str}'
     else:
         data += f'title: {escape_title(title)}'
-    data += '\n---\n' + '\n'.join(lines[3:])
+    data += '\n---\n' + '\n'.join(lines[1:])
     return data
 
 def replace_html_ltgt(data):
@@ -231,7 +231,33 @@ def remove_unnecessary_stars(data):
     data = re.sub(r'\n\*\*[ \t]*\n\*\*', '', data)
     return data
 
+def remove_myCompany_staff(data):
+    lines = data.split('\n')
+    nlines = []
+    for line in lines:
+        if line.startswith('## Attachments:') or line.startswith('### Attachments:'):
+            break
+        if '![](attachments/thumbnails/1146972/1147367)' in line: continue
+        if '![](attachments/thumbnails/1146972/1147365)' in line: continue
+        if '![](attachments/1146972/1147367.png)' in line: continue
+        if '![](attachments/1146972/1147365.png)' in line: continue
+        if '![](plugins/servlet/confluence/placeholder/unknown-attachment)' in line: continue
+        
+        nlines.append(line)
+    return '\n'.join(nlines)
+
+def transform_broken_MyCompanyLinks(data):
+    logfile = open('mycompany_links.log', 'w', encoding='utf-8')
+    html_map = load_map('filemap_mc_ru.json')
+    replacements = {}
+    for oldfile, newfile in html_map.items():
+        oldlink = f'https://mycompany-docs.lsfusion.org/pages/viewpage.action?pageId={oldfile[:-5]}'
+        data = data.replace(oldlink, newfile)
+        logfile.write(f'{oldlink} -> {newfile}\n')
+    return data
+
 def transform_file_content(data, filename, samples_links, samples_url, info_list, is_category, overview_str):
+    data = transform_broken_MyCompanyLinks(data)
     data = transform_tables(data, filename, samples_links, samples_url)
     data = replace_html_ltgt(data)
     data = create_title(data, is_category, overview_str)
@@ -240,6 +266,7 @@ def transform_file_content(data, filename, samples_links, samples_url, info_list
     data = fix_image_links(data)
     data = add_info_blocks(data, info_list)
     data = remove_unnecessary_stars(data)
+    data = remove_myCompany_staff(data)
     return data    
     
 def load_map(filename):
@@ -329,7 +356,7 @@ def transform_files(settings, indir):
             data = infile.read()
             infile.close()
             if len(data) > 0 and data[0] == '#': # not transformed earlier
-                files[filename] = transform_file_content(data, filename, samples_links[filename], settings["samples_url"], infomap.get(filename, []), filename in categories, settings['overview_str'])
+                files[filename] = transform_file_content(data, filename, samples_links.get(filename, []), settings["samples_url"], infomap.get(filename, []), filename in categories, settings['overview_str'])
     return files
 
 def fix_all_links(settings, files):

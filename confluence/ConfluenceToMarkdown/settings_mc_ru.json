@@ -1,0 +1,17 @@
+{
+	"html_dir": "MCRU",
+	"xml_file": "entities_mc_ru.xml",
+	"input_dir": "mycompany-rudocs/docs/",
+	"output_dir": "mycompany-rudocs/docs/",
+	"filemap": "filemap_mc_ru.json",
+	"anchormap": "anchormap_mc_ru.json",
+	"samples": "samples_mc_ru.json",
+	"anchors_log": "anchors_mc_ru.log",
+	"samples_url": "",
+	"mdmap": "md_map_mc_ru.json",
+	"labelmap": "label_map_mc_ru.json",
+	"infomap": "infomap_mc_ru.json",
+	"infomap_log": "infomap_mc_ru.log",
+	"category_list": "category_list_mc.json",
+	"overview_str": "Обзор"
+}

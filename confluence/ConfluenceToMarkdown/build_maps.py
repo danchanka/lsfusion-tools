@@ -2,7 +2,9 @@ import sys, re, os, json
 import xml.etree.ElementTree as ET
 
 def transform_name(title):
-    title = title.replace('lsFusion : ', '')
+    title = title.replace('MyCompany : ', '')
+    title = title.replace('English : ', '')
+#    title = title.replace('lsFusion : ', '')
     title = title.replace('&gt;', '>').replace('&lt;', '<')    
     title = re.sub(r'[\s<>()\[\]{}:;\'`"\/\\|?\*~!@#$%^&,]', '_', title)
     title = re.sub(r'__+', '_', title) 
