@@ -1,0 +1,17 @@
+{
+	"html_dir": "LSFUS",
+	"xml_file": "entities.xml",
+	"input_dir": "docusaurustest/docs/",
+	"output_dir": "docusaurustest/docs/",
+	"filemap": "filemap.json",
+	"anchormap": "anchormap.json",
+	"samples": "samples.json",
+	"anchors_log": "anchors.log",
+	"samples_url": "https://documentation.lsfusion.org/sample",
+	"mdmap": "md_map.json",
+	"labelmap": "label_map.json",
+	"infomap": "infomap.json",
+	"infomap_log": "infomap.log",
+	"category_list": "category_list.json",
+	"overview_str": "Overview"
+}

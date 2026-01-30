@@ -1,0 +1,17 @@
+{
+	"html_dir": "LSFUSRU",
+	"xml_file": "entitiesru.xml",
+	"input_dir": "docusaurustestru/docs/",
+	"output_dir": "docusaurustestru/docs/",
+	"filemap": "filemap_ru.json",
+	"anchormap": "anchormap_ru.json",
+	"samples": "samples_ru.json",
+	"anchors_log": "anchors_ru.log",
+	"samples_url": "https://ru-documentation.lsfusion.org/sample",
+	"mdmap": "md_map_ru.json",
+	"labelmap": "label_map_ru.json",
+	"infomap": "infomap_ru.json",
+	"infomap_log": "infomap_ru.log",
+	"category_list": "category_list.json",
+	"overview_str": "Обзор"
+}
